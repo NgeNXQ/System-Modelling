@@ -6,7 +6,7 @@ namespace LabWork2.Framework.Components.Modules.Concrete;
 
 internal sealed class ProcessorModule : Module
 {
-    private readonly int maxQueueLength;
+    private readonly int queueMaxLength;
     private readonly IMockWorker mockWorker;
 
     private int queueLength;
@@ -17,16 +17,16 @@ internal sealed class ProcessorModule : Module
     private int successesCount;
     private float totalDelayPayloads;
 
-    internal ProcessorModule(string identifier, IMockWorker mockWorker, int maxQueueLength) : base(identifier)
+    internal ProcessorModule(string identifier, IMockWorker mockWorker, int queueMaxLength) : base(identifier)
     {
         if (mockWorker == null)
             throw new ArgumentNullException($"{nameof(mockWorker)} cannot be null.");
 
-        if (maxQueueLength < 0)
-            throw new ArgumentException($"{nameof(maxQueueLength)} cannot be less than 0.");
+        if (queueMaxLength < 0)
+            throw new ArgumentException($"{nameof(queueMaxLength)} cannot be less than 0.");
 
         this.mockWorker = mockWorker;
-        this.maxQueueLength = maxQueueLength;
+        this.queueMaxLength = queueMaxLength;
     }
 
     internal bool IsBusy { get; private set; }
@@ -45,7 +45,7 @@ internal sealed class ProcessorModule : Module
     {
         if (this.IsBusy)
         {
-            if (this.queueLength < this.maxQueueLength)
+            if (this.queueLength < this.queueMaxLength)
                 ++this.queueLength;
             else
                 ++this.failuresCount;
