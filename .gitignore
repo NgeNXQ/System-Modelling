@@ -1,2 +1,6 @@
+bin/
+obj/
+*.sln
 .venv/
+.vscode/
 __pycache__/
