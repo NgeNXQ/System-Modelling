@@ -12,6 +12,21 @@ file sealed class Program
     {
         Program.RunExampleModel();
         // Program.RunAdvancedModel();
+
+        // for (float simulationTime = 1000.0f; simulationTime <= 5000.0f; simulationTime += 4000.0f)
+        // {
+        //     for (float delayPayloadCreation = 3.0f; delayPayloadCreation <= 4.5f; delayPayloadCreation += .5f)
+        //     {
+        //         for (float delayPayloadProcessing = 3.0f; delayPayloadProcessing <= 4.5f; delayPayloadProcessing += .5f)
+        //         {
+        //             for (int queueMaxLength = 1; queueMaxLength <= 3; ++queueMaxLength)
+        //             {
+        //                 System.Console.WriteLine($"simulationTime: {simulationTime}; delayPayloadCreation: {delayPayloadCreation}; delayPayloadProcessing: {delayPayloadProcessing}; queueMaxLength {queueMaxLength}. \n");
+        //                 Program.RunBenchmarkModel(simulationTime, delayPayloadCreation, delayPayloadProcessing, queueMaxLength);
+        //             }
+        //         }
+        //     }
+        // }
     }
 
     private static void RunExampleModel()
@@ -25,7 +40,7 @@ file sealed class Program
         processor1.AttachModule(processor2, 1.0f);
         processor2.AttachModule(processor3, 1.0f);
 
-        new SystemModelController(new List<Module>() { create, processor1, processor2, processor3 }).RunSimulation(1000);
+        new SystemModelController(new List<Module>() { create, processor1, processor2, processor3 }).RunSimulation(1000.0f);
     }
 
     private static void RunAdvancedModel()
@@ -41,7 +56,20 @@ file sealed class Program
         processor2.AttachModule(processor1, 0.5f);
         processor2.AttachModule(multiProcessor3, 0.5f);
 
-        new SystemModelController(new List<Module>() { create, processor1, processor2, multiProcessor3 }).RunSimulation(1000);
+        new SystemModelController(new List<Module>() { create, processor1, processor2, multiProcessor3 }).RunSimulation(1000.0f);
     }
 
+    private static void RunBenchmarkModel(float simulationTime, float delayPayloadCreation, float delayPayloadProcessing, int queueMaxLength)
+    {
+        CreateModule create = new CreateModule("create", new MockExponentialWorker(delayPayloadCreation));
+        ProcessorModule processor1 = new ProcessorModule("processor1", new MockExponentialWorker(delayPayloadProcessing), queueMaxLength);
+        ProcessorModule processor2 = new ProcessorModule("processor2", new MockExponentialWorker(delayPayloadProcessing), queueMaxLength);
+        ProcessorModule processor3 = new ProcessorModule("processor3", new MockExponentialWorker(delayPayloadProcessing), queueMaxLength);
+
+        create.AttachModule(processor1, 1.0f);
+        processor1.AttachModule(processor2, 1.0f);
+        processor2.AttachModule(processor3, 1.0f);
+
+        new SystemModelController(new Module[] { create, processor1, processor2, processor3 }).RunSimulation(simulationTime);
+    }
 }

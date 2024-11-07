@@ -47,10 +47,10 @@ internal sealed class SystemModelController : IStatisticsPrinter
 
     public void PrintFinalStatistics()
     {
-        Console.Write('\n');
-
         foreach (Module module in this.modules)
             module.PrintFinalStatistics();
+
+        Console.Write('\n');
     }
 
     public void PrintIntermediateStatistics()

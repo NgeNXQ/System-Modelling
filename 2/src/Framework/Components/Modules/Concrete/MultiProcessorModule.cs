@@ -8,8 +8,7 @@ namespace LabWork2.Framework.Components.Modules.Concrete;
 
 internal sealed class MultiProcessorModule : Module
 {
-    private readonly int maxQueueLength;
-    private readonly IMockWorker mockWorker;
+    private readonly int queueMaxLength;
     private readonly IList<ProcessorModule> subProcessorsModules;
 
     private bool isBusy;
@@ -21,19 +20,18 @@ internal sealed class MultiProcessorModule : Module
     private int failuresCount;
     private int successesCount;
 
-    internal MultiProcessorModule(string identifier, IMockWorker mockWorker, int maxQueueLength, int subProcessorsCount) : base(identifier)
+    internal MultiProcessorModule(string identifier, IMockWorker mockWorker, int queueMaxLength, int subProcessorsCount) : base(identifier)
     {
         if (mockWorker == null)
             throw new ArgumentNullException($"{nameof(mockWorker)} cannot be null.");
 
-        if (maxQueueLength < 0)
-            throw new ArgumentException($"{nameof(maxQueueLength)} cannot be less than 0.");
+        if (queueMaxLength < 0)
+            throw new ArgumentException($"{nameof(queueMaxLength)} cannot be less than 0.");
 
         if (subProcessorsCount <= 0)
             throw new ArgumentException($"{nameof(subProcessorsCount)} cannot be less or equals 0.");
 
-        this.mockWorker = mockWorker;
-        this.maxQueueLength = maxQueueLength;
+        this.queueMaxLength = queueMaxLength;
         this.subProcessorsModules = new List<ProcessorModule>();
 
         for (int i = 0; i < subProcessorsCount; ++i)
@@ -57,7 +55,7 @@ internal sealed class MultiProcessorModule : Module
     {
         if (this.isBusy)
         {
-            if (this.queueLength < this.maxQueueLength)
+            if (this.queueLength < this.queueMaxLength)
                 ++this.queueLength;
             else
                 ++this.failuresCount;
