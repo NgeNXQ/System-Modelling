@@ -15,6 +15,7 @@ internal sealed class ProcessorModule : Module
     private float timeCurrent;
     private int failuresCount;
     private int successesCount;
+    private float totalDelayPayloads;
 
     internal ProcessorModule(string identifier, IMockWorker mockWorker, int maxQueueLength) : base(identifier)
     {
@@ -76,21 +77,24 @@ internal sealed class ProcessorModule : Module
 
     private protected override sealed void MoveTimeline()
     {
-        this.TimeNext = this.TimeCurrent + this.mockWorker.DelayPayload;
+        float delayPayload = this.mockWorker.DelayPayload;
+        this.TimeNext = this.TimeCurrent + delayPayload;
+        this.totalDelayPayloads += delayPayload;
     }
 
     public override sealed void PrintFinalStatistics()
     {
         float averageQueueLength = this.queueLengthSum / this.TimeCurrent;
+        float averageDelayPayload = this.totalDelayPayloads / this.successesCount;
         float failureProbability = (this.successesCount == 0 ? 0 : (float)this.failuresCount / (this.failuresCount + this.successesCount));
 
         Console.Write($"|REPORT| [{base.Identifier}] ");
-        Console.WriteLine($"Failures: {this.failuresCount}; Successes: {this.successesCount}; Failure probability: {failureProbability}; Average queue: {averageQueueLength}");
+        Console.WriteLine($"Delay mean: {averageDelayPayload}; Successes: {this.successesCount}; Queue mean: {averageQueueLength}; Failures: {this.failuresCount}; Failure probability: {failureProbability}; ");
     }
 
     public override sealed void PrintIntermediateStatistics()
     {
         Console.Write($"|LOG| (STATS) [{base.Identifier}] ");
-        Console.WriteLine($"busy?: {this.IsBusy}; Queue: {this.queueLength}; Failures: {this.failuresCount}; Time: {this.TimeNext}.");
+        Console.WriteLine($"Queue: {this.queueLength}; Failures: {this.failuresCount}; Time: {this.TimeNext}.");
     }
 }

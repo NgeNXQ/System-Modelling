@@ -53,24 +53,6 @@ internal abstract class Module : IStatisticsPrinter
             }
 
             return null;
-
-            // int currentWeight = 0;
-            // int randomValue = this.random.Next(this.totalNeighboursWeights);
-
-            // foreach (KeyValuePair<Module, int> neighbour in this.neighbours)
-            // {
-            //     if (randomValue <= currentWeight)
-            //     {
-            //         Console.Write($"|LOG| (TRACE) {this.Identifier} ");
-            //         Console.WriteLine($"sends task to the {neighbour.Key.Identifier}.");
-            //         return neighbour.Key;
-            //     }
-
-            //     currentWeight += neighbour.Value;
-            // }
-
-            // Console.WriteLine($"|LOG| (TRACE) {this.Identifier} disposes task.");
-            // return null;
         }
     }
 

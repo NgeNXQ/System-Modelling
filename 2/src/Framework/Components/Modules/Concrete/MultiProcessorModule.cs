@@ -114,12 +114,15 @@ internal sealed class MultiProcessorModule : Module
         float failureProbability = (this.successesCount == 0 ? 0 : (float)this.failuresCount / (this.failuresCount + this.successesCount));
 
         Console.Write($"|REPORT| [{base.Identifier}] ");
-        Console.WriteLine($"Failures: {this.failuresCount}; Successes: {this.successesCount}; Failure probability: {failureProbability}; Average queue: {averageQueueLength}");
+        Console.WriteLine($"Failures: {this.failuresCount}; Successes: {this.successesCount}; Failure probability: {failureProbability}; Queue mean: {averageQueueLength}");
+
+        foreach (ProcessorModule processorModule in this.subProcessorsModules)
+            processorModule.PrintFinalStatistics();
     }
 
     public override sealed void PrintIntermediateStatistics()
     {
         Console.Write($"|LOG| (STATS) [{base.Identifier}] ");
-        Console.WriteLine($"busy?: {this.isBusy}; Queue: {this.queueLength}; Failures: {this.failuresCount}; Time: {this.TimeNext}.");
+        Console.WriteLine($"Queue: {this.queueLength}; Failures: {this.failuresCount}; Time: {this.TimeNext}.");
     }
 }

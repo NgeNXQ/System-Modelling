@@ -9,6 +9,7 @@ internal sealed class CreateModule : Module
     private readonly IMockWorker mockWorker;
 
     private int tasksCount;
+    private float totalDelayPayloads;
 
     internal CreateModule(string identifier, IMockWorker mockWorker) : base(identifier)
     {
@@ -36,13 +37,15 @@ internal sealed class CreateModule : Module
 
     private protected override sealed void MoveTimeline()
     {
-        this.TimeNext = this.TimeCurrent + this.mockWorker.DelayPayload;
+        float delayPayload = this.mockWorker.DelayPayload;
+        this.TimeNext = this.TimeCurrent + delayPayload;
+        this.totalDelayPayloads += delayPayload;
     }
 
     public override sealed void PrintFinalStatistics()
     {
         Console.Write($"|REPORT| [{base.Identifier}] ");
-        Console.WriteLine($"Tasks: {this.tasksCount}.");
+        Console.WriteLine($"Tasks: {this.tasksCount}; Delay mean: {this.totalDelayPayloads / this.tasksCount}.");
     }
 
     public override sealed void PrintIntermediateStatistics()
