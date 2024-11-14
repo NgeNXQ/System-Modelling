@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using LabWork3.Framework.Components.Tasks.Common;
 using LabWork3.Framework.Components.Modules.Common;
+using LabWork3.Framework.Components.Workers.Common;
 
 namespace LabWork3.Framework.Components.Modules.Concrete;
 
@@ -29,7 +30,7 @@ internal sealed class DisposeModule : Module
         throw new InvalidOperationException($"{base.Identifier} ({this.GetType()}) is not able to complete tasks.");
     }
 
-    internal override sealed void AcceptTask(Task task)
+    internal override sealed void AcceptTask(Task task, IMockWorker? mockWorker)
     {
         Console.WriteLine($"|LOG| (TRACE) [{base.Identifier}] disposes task");
 

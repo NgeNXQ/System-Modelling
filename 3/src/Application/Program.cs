@@ -1,10 +1,12 @@
 using System;
+using System.Collections.Generic;
 using LabWork3.Framework.Core.Controllers;
 using LabWork3.Framework.Components.Tasks.Common;
 using LabWork3.Framework.Components.Tasks.Concrete;
 using LabWork3.Framework.Components.Queues.Concrete;
 using LabWork3.Framework.Components.Modules.Common;
 using LabWork3.Framework.Components.Modules.Concrete;
+using LabWork3.Framework.Components.Workers.Common;
 using LabWork3.Framework.Components.Workers.Concrete;
 using LabWork3.Framework.Components.Schemes.Concrete;
 using LabWork2.Framework.Components.Modules.Concrete;
@@ -120,8 +122,9 @@ file sealed class Program
 
         CreateModule create;
         DisposeModule dispose;
-        MultiProcessorModule reception;
-        ProcessorModule laboratoryPath;
+        CustomMultiProcessorModule reception;
+        ProcessorModule laboratoryPathForward;
+        ProcessorModule laboratoryPathBackwards;
         ProcessorModule laboratoryRegistry;
         MultiProcessorModule hospitalWardsPath;
         MultiProcessorModule laboratoryExamination;
@@ -129,25 +132,33 @@ file sealed class Program
         dispose = new DisposeModule("dispose");
 
         TypeScheme receptionScheme = new TypeScheme(dispose);
-        reception = new MultiProcessorModule("reception", receptionScheme, new MockExponentialWorker(15), new DefaultQueue(Int32.MaxValue), 2);
+        Dictionary<int, IMockWorker> receptionWorkers = new Dictionary<int, IMockWorker>();
+        receptionWorkers[PATIENT_TYPE_1] = new MockExponentialWorker(15);
+        receptionWorkers[PATIENT_TYPE_2] = new MockExponentialWorker(40);
+        receptionWorkers[PATIENT_TYPE_3] = new MockExponentialWorker(30);
+        reception = new CustomMultiProcessorModule("reception", receptionScheme, receptionWorkers, new DefaultQueue(Int32.MaxValue), 2);
 
         hospitalWardsPath = new MultiProcessorModule("hospital_wards_path", new SingleTransitionScheme(dispose), new MockUniformWorker(3, 8), new DefaultQueue(Int32.MaxValue), 3);
 
         ProbabilityScheme laboratoryExaminationScheme = new ProbabilityScheme(dispose);
-        laboratoryExaminationScheme.Attach(dispose, 0.5f);
-        laboratoryExaminationScheme.Attach(reception, 0.5f, InjectCustomLogic);
         laboratoryExamination = new MultiProcessorModule("laboratory_examination", laboratoryExaminationScheme, new MockErlangWorker(4.0f, 2), new DefaultQueue(Int32.MaxValue), 2);
 
         laboratoryRegistry = new ProcessorModule("laboratory_registry", new SingleTransitionScheme(laboratoryExamination, dispose), new MockErlangWorker(4.5f, 3), new DefaultQueue(Int32.MaxValue));
-        laboratoryPath = new ProcessorModule("laboratory_path", new SingleTransitionScheme(laboratoryRegistry, dispose), new MockUniformWorker(2, 5), new DefaultQueue(Int32.MaxValue));
 
-        receptionScheme.Attach(laboratoryPath, PATIENT_TYPE_2);
-        receptionScheme.Attach(laboratoryPath, PATIENT_TYPE_3);
+        laboratoryPathForward = new ProcessorModule("laboratory_path_forward", new SingleTransitionScheme(laboratoryRegistry, dispose), new MockUniformWorker(2, 5), new DefaultQueue(Int32.MaxValue));
+
+        laboratoryPathBackwards = new ProcessorModule("laboratory_path_backwards", new SingleTransitionScheme(reception, dispose), new MockUniformWorker(2, 5), new DefaultQueue(Int32.MaxValue));
+
+        laboratoryExaminationScheme.Attach(dispose, 0.5f);
+        laboratoryExaminationScheme.Attach(laboratoryPathBackwards, 0.5f, InjectCustomLogic);
+
         receptionScheme.Attach(hospitalWardsPath, PATIENT_TYPE_1);
+        receptionScheme.Attach(laboratoryPathForward, PATIENT_TYPE_2);
+        receptionScheme.Attach(laboratoryPathForward, PATIENT_TYPE_3);
 
         create = new CreateModule("create", new SingleTransitionScheme(reception, dispose), new MockExponentialWorker(15), new PatientTaskFactory());
 
-        new SimulationModelController(new Module[] { create, reception, laboratoryPath, laboratoryRegistry, laboratoryExamination, hospitalWardsPath, dispose }).RunSimulation(1000.0f);
+        new SimulationModelController(new Module[] { create, reception, laboratoryPathForward, laboratoryRegistry, laboratoryExamination, laboratoryPathBackwards, hospitalWardsPath, dispose }).RunSimulation(1000.0f);
 
         Console.WriteLine($"|REPORT| [CUSTOM] Injections: {injectionsCount}");
 

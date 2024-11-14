@@ -12,24 +12,24 @@ using LabWork3.Framework.Components.Schemes.Concrete;
 
 namespace LabWork2.Framework.Components.Modules.Concrete;
 
-internal sealed class MultiProcessorModule : Module
+internal sealed class CustomMultiProcessorModule : Module
 {
     private readonly IScheme distribution;
-    private readonly IMockWorker mockWorker;
     private readonly IList<ProcessorModule> subProcessors;
+    private readonly IDictionary<int, IMockWorker> mockWorkers;
 
     private float timeCurrent;
     private float totalTimeBusy;
     private float totalQueueLengthSum;
     private float totalSubProcessorsTimeBusy;
 
-    internal MultiProcessorModule(string identifier, IScheme scheme, IMockWorker mockWorker, IQueue queue, int subProcessorsCount) : base(identifier)
+    internal CustomMultiProcessorModule(string identifier, IScheme scheme, IDictionary<int, IMockWorker> mockWorkers, IQueue queue, int subProcessorsCount) : base(identifier)
     {
         if (scheme == null)
             throw new ArgumentNullException($"{nameof(scheme)} cannot be null.");
 
-        if (mockWorker == null)
-            throw new ArgumentNullException($"{nameof(mockWorker)} cannot be null.");
+        if (mockWorkers == null)
+            throw new ArgumentNullException($"{nameof(mockWorkers)} cannot be null.");
 
         if (queue == null)
             throw new ArgumentNullException($"{nameof(queue)} cannot be null.");
@@ -38,12 +38,12 @@ internal sealed class MultiProcessorModule : Module
             throw new ArgumentException($"{nameof(subProcessorsCount)} cannot be less or equals 0.");
 
         this.Queue = queue;
-        this.mockWorker = mockWorker;
+        this.mockWorkers = mockWorkers;
         this.subProcessors = new ProcessorModule[subProcessorsCount];
         this.distribution = new PayloadDistributionScheme(this.subProcessors, scheme.Fallback);
 
         for (int i = 0; i < subProcessorsCount; ++i)
-            this.subProcessors[i] = new ProcessorModule($"{identifier}_{i}", scheme, mockWorker, new DefaultQueue(0));
+            this.subProcessors[i] = new ProcessorModule($"{identifier}_{i}", scheme, mockWorkers.Values.FirstOrDefault(), new DefaultQueue(0));
     }
 
     internal IQueue Queue { get; private init; }
@@ -87,9 +87,9 @@ internal sealed class MultiProcessorModule : Module
         else
         {
             Module? nextModule = this.distribution.GetNextModule(task);
-            nextModule?.AcceptTask(task, null);
+            nextModule?.AcceptTask(task, this.mockWorkers[task.CurrentType]);
             Console.WriteLine($"|LOG| (TRACE) [{base.Identifier}] sends task to the [{nextModule?.Identifier}]");
-            this.MoveTimeline(this.mockWorker.DelayPayload);
+            this.MoveTimeline(0.0f);
         }
     }
 
@@ -105,12 +105,12 @@ internal sealed class MultiProcessorModule : Module
             if (!this.Queue.IsEmpty)
             {
                 Task newTask = this.Queue.RemoveFirst();
-                processor.AcceptTask(newTask, null);
+                processor.AcceptTask(newTask, this.mockWorkers[newTask.CurrentType]);
                 Console.WriteLine($"|LOG| (TRACE) [{base.Identifier}] sends task to the [{processor.Identifier}]");
             }
         }
 
-        this.MoveTimeline(this.mockWorker.DelayPayload);
+        this.MoveTimeline(0.0f);
     }
 
     private protected override sealed void MoveTimeline(float deltaTime)

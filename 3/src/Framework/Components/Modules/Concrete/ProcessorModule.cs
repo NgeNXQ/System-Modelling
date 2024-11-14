@@ -10,25 +10,22 @@ namespace LabWork3.Framework.Components.Modules.Concrete;
 internal sealed class ProcessorModule : Module
 {
     private readonly IScheme scheme;
-    private readonly IMockWorker mockWorker;
 
     private float timeCurrent;
     private Task? currentTask;
+    private IMockWorker? mockWorker;
 
     private float totalTimeBusy;
     private float totalDelayPayloads;
     private float totalQueueLengthSum;
 
-    internal ProcessorModule(string identifier, IScheme scheme, IMockWorker mockWorker, IQueue queue) : base(identifier)
+    internal ProcessorModule(string identifier, IScheme scheme, IMockWorker? mockWorker, IQueue queue) : base(identifier)
     {
         if (queue == null)
             throw new ArgumentNullException($"{nameof(queue)} cannot be null.");
 
         if (scheme == null)
             throw new ArgumentNullException($"{nameof(scheme)} cannot be null.");
-
-        if (mockWorker == null)
-            throw new ArgumentNullException($"{nameof(mockWorker)} cannot be null.");
 
         this.Queue = queue;
         this.scheme = scheme;
@@ -57,7 +54,7 @@ internal sealed class ProcessorModule : Module
         }
     }
 
-    internal override sealed void AcceptTask(Task task)
+    internal override sealed void AcceptTask(Task task, IMockWorker? customMockWorker)
     {
         if (this.IsBusy)
         {
@@ -70,7 +67,9 @@ internal sealed class ProcessorModule : Module
         {
             this.IsBusy = true;
             this.currentTask = task;
-            this.MoveTimeline(this.mockWorker.DelayPayload);
+
+            this.mockWorker = customMockWorker != null ? customMockWorker : this.mockWorker;
+            this.MoveTimeline(this.mockWorker!.DelayPayload);
         }
     }
 
@@ -93,11 +92,11 @@ internal sealed class ProcessorModule : Module
         else
         {
             this.currentTask = this.Queue.RemoveFirst();
-            this.MoveTimeline(this.mockWorker.DelayPayload);
+            this.MoveTimeline(this.mockWorker!.DelayPayload);
         }
 
         Module? nextModule = this.scheme.GetNextModule(this.currentTask!);
-        nextModule?.AcceptTask(this.currentTask!);
+        nextModule?.AcceptTask(this.currentTask!, null);
 
         Console.WriteLine($"|LOG| (TRACE) [{base.Identifier}] sends task to the [{nextModule?.Identifier}]");
     }

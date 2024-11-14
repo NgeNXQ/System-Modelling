@@ -1,6 +1,7 @@
 using System;
 using LabWork3.Framework.Common;
 using LabWork3.Framework.Components.Tasks.Common;
+using LabWork3.Framework.Components.Workers.Common;
 
 namespace LabWork3.Framework.Components.Modules.Common;
 
@@ -21,8 +22,8 @@ internal abstract class Module : IStatisticsPrinter
     internal abstract float TimeCurrent { get; set; }
 
     internal abstract void CompleteTask();
-    internal abstract void AcceptTask(Task task);
     private protected abstract void MoveTimeline(float deltaTime);
+    internal abstract void AcceptTask(Task task, IMockWorker? mockWorker);
 
     public abstract void PrintFinalStatistics();
     public abstract void PrintIntermediateStatistics();

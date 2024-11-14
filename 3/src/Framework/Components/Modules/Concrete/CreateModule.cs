@@ -43,7 +43,7 @@ internal sealed class CreateModule : Module
         base.TimeNext = this.TimeCurrent + deltaTime;
     }
 
-    internal override sealed void AcceptTask(Task task)
+    internal override sealed void AcceptTask(Task task, IMockWorker? mockWorker)
     {
         throw new InvalidOperationException($"{base.Identifier} ({this.GetType()}) is not able to accept tasks.");
     }
@@ -54,7 +54,7 @@ internal sealed class CreateModule : Module
 
         Task newTask = this.taskFactory.CreateTask(this.TimeCurrent);
         Module? nextModule = this.scheme.GetNextModule(newTask);
-        nextModule?.AcceptTask(newTask);
+        nextModule?.AcceptTask(newTask, null);
         this.MoveTimeline(this.mockWorker.DelayPayload);
 
         Console.WriteLine($"|LOG| (TRACE) [{base.Identifier}] sends task to the [{nextModule?.Identifier}]");
