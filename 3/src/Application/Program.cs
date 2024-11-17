@@ -9,7 +9,6 @@ using LabWork3.Framework.Components.Modules.Concrete;
 using LabWork3.Framework.Components.Workers.Common;
 using LabWork3.Framework.Components.Workers.Concrete;
 using LabWork3.Framework.Components.Schemes.Concrete;
-using LabWork2.Framework.Components.Modules.Concrete;
 using LabWork3.Framework.Components.Tasks.Utilities.Factories.Concrete;
 
 namespace LabWork3.Application;

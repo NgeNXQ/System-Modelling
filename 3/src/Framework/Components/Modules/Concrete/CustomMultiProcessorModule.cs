@@ -7,10 +7,9 @@ using LabWork3.Framework.Components.Queues.Concrete;
 using LabWork3.Framework.Components.Workers.Common;
 using LabWork3.Framework.Components.Schemes.Common;
 using LabWork3.Framework.Components.Modules.Common;
-using LabWork3.Framework.Components.Modules.Concrete;
 using LabWork3.Framework.Components.Schemes.Concrete;
 
-namespace LabWork2.Framework.Components.Modules.Concrete;
+namespace LabWork3.Framework.Components.Modules.Concrete;
 
 internal sealed class CustomMultiProcessorModule : Module
 {
