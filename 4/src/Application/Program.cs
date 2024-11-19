@@ -1,14 +1,10 @@
 using System;
 using System.Collections.Generic;
 using LabWork4.Framework.Core.Controllers;
-using LabWork4.Framework.Components.Tasks.Common;
-using LabWork4.Framework.Components.Tasks.Concrete;
 using LabWork4.Framework.Components.Queues.Concrete;
 using LabWork4.Framework.Components.Modules.Common;
 using LabWork4.Framework.Components.Modules.Concrete;
-using LabWork4.Framework.Components.Workers.Common;
 using LabWork4.Framework.Components.Workers.Concrete;
-using LabWork4.Framework.Components.Schemes.Common;
 using LabWork4.Framework.Components.Schemes.Concrete;
 using LabWork4.Framework.Components.Tasks.Utilities.Factories.Concrete;
 
@@ -19,6 +15,7 @@ file sealed class Program
     private static void Main()
     {
         const float SIMULATION_TIME = 500.0f;
+        const int BENCHMARK_MILLISECONDS = 1000;
 
         const int ITERATIONS_COUNT = 10;
 
@@ -26,6 +23,8 @@ file sealed class Program
         const int MODULES_COUNT_START = 100;
         const int MODULES_COUNT_DELTA = 100;
         const int MODULES_COUNT_FINISH = 1000;
+
+        // Program.CreateBenchmarkModel().RunSimulation(SIMULATION_TIME, BENCHMARK_MILLISECONDS);
 
         IDictionary<int, IList<int>> samples = new Dictionary<int, IList<int>>();
 
@@ -49,6 +48,15 @@ file sealed class Program
 
         for (int modulesCount = MODULES_COUNT_START; modulesCount <= MODULES_COUNT_FINISH; modulesCount += MODULES_COUNT_DELTA)
             Console.Write($"\n|REPORT| [BENCHMARK] n: {modulesCount}; Duration (mean): {Program.CalculateDurationMean(samples[modulesCount])}ms");
+    }
+
+    private static BenchmarkModelController CreateBenchmarkModel()
+    {
+        DisposeModule dispose = new DisposeModule("dispose");
+        ProcessorModule processor = new ProcessorModule("processor", new SingleTransitionScheme(dispose), new MockExponentialWorker(1.0f), new DefaultQueue(Int32.MaxValue));
+        CreateModule create = new CreateModule("create", new SingleTransitionScheme(processor), new MockExponentialWorker(1.0f), new MockTaskFactory());
+        return new BenchmarkModelController(new Module[] { create, processor, dispose });
+
     }
 
     private static SimulationModelController CreateSequentialModel(int modelsCount)

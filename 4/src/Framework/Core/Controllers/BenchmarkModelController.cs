@@ -7,7 +7,7 @@ using LabWork4.Framework.Components.Modules.Common;
 
 namespace LabWork4.Framework.Core.Controllers;
 
-internal sealed class SimulationModelController : IStatisticsPrinter
+internal sealed class BenchmarkModelController : IStatisticsPrinter
 {
     private readonly Stopwatch stopwatch;
     private readonly IList<Module> modules;
@@ -15,7 +15,7 @@ internal sealed class SimulationModelController : IStatisticsPrinter
     private float timeNext;
     private float timeCurrent;
 
-    internal SimulationModelController(IList<Module> modules)
+    internal BenchmarkModelController(IList<Module> modules)
     {
         if (modules == null)
             throw new ArgumentNullException($"{nameof(modules)} cannot be null.");
@@ -29,7 +29,7 @@ internal sealed class SimulationModelController : IStatisticsPrinter
 
     internal int SimulationDurationMilliseconds => this.stopwatch.Elapsed.Milliseconds;
 
-    internal void RunSimulation(float simulationTime)
+    internal void RunSimulation(float simulationTime, int milliseconds)
     {
         IList<Module> nextModules;
         this.timeNext = this.modules.Min(module => module.TimeNext);
@@ -38,6 +38,9 @@ internal sealed class SimulationModelController : IStatisticsPrinter
 
         while (timeNext < simulationTime)
         {
+            if (this.stopwatch.ElapsedMilliseconds >= milliseconds)
+                break;
+
             this.timeCurrent = this.timeNext;
 
             foreach (Module module in this.modules)
@@ -50,12 +53,12 @@ internal sealed class SimulationModelController : IStatisticsPrinter
 
             this.timeNext = this.modules.Min(module => module.TimeNext);
 
-            // this.PrintIntermediateStatistics();
+            this.PrintIntermediateStatistics();
         }
 
         this.stopwatch.Stop();
 
-        // this.PrintFinalStatistics();
+        this.PrintFinalStatistics();
     }
 
     public void PrintIntermediateStatistics()
@@ -68,7 +71,5 @@ internal sealed class SimulationModelController : IStatisticsPrinter
     {
         foreach (Module module in this.modules)
             module.PrintFinalStatistics();
-
-        // Console.WriteLine($"|LOG| [SYSTEM] Duration: {this.stopwatch.Elapsed}");
     }
 }
