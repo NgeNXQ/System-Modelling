@@ -1,0 +1,295 @@
+
+                                      ARENA Simulation Results
+                                      NgenX - License: STUDENT
+
+                                  Summary for Replication 1 of 1
+
+Project: Unnamed Project                                             Run execution date :11/28/2024
+Analyst: NgenX                                                       Model revision date:11/28/2024
+
+Replication ended at time      : 3.2585138 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+TRANSITION TO DEVICE_1.VACostPerEntity      .00000     .00000     .00000     .00000       2712    
+TRANSITION TO DEVICE_5.VACostPerEntity      .00000     .00000     .00000     .00000       2822    
+TRANSITION TO DEVICE_4.VACostPerEntity      .00000     .00000     .00000     .00000       2956    
+TRANSITION TO DEVICE_3.VACostPerEntity      .00000     .00000     .00000     .00000       3076    
+TRANSITION TO DEVICE_2.VACostPerEntity      .00000     .00000     .00000     .00000       3196    
+MODULE PROCESSOR_5.VACostPerEntity          .00000     .00000     .00000     .00000       2712    
+MODULE PROCESSOR_4.VACostPerEntity          .00000     .00000     .00000     .00000       2822    
+MODULE PROCESSOR_3.VACostPerEntity          .00000     .00000     .00000     .00000       2956    
+MODULE PROCESSOR_2.VACostPerEntity          .00000     .00000     .00000     .00000       3076    
+MODULE PROCESSOR_1.VACostPerEntity          .00000     .00000     .00000     .00000       3196    
+MODULE PROCESSOR_5.OtherCostPerEntity       .00000     .00000     .00000     .00000       2712    
+MODULE PROCESSOR_4.OtherCostPerEntity       .00000     .00000     .00000     .00000       2822    
+MODULE PROCESSOR_3.OtherCostPerEntity       .00000     .00000     .00000     .00000       2956    
+MODULE PROCESSOR_2.OtherCostPerEntity       .00000     .00000     .00000     .00000       3076    
+MODULE PROCESSOR_1.OtherCostPerEntity       .00000     .00000     .00000     .00000       3196    
+MODULE PROCESSOR_5.TotalTimePerEntity       .01667     (Corr)     .01667     .01667       2712    
+MODULE PROCESSOR_4.TotalTimePerEntity       .01667     (Corr)     .01667     .01667       2822    
+MODULE PROCESSOR_3.TotalTimePerEntity       .01667     (Corr)     .01667     .01667       2956    
+MODULE PROCESSOR_2.TotalTimePerEntity       .01667     (Corr)     .01667     .01667       3076    
+MODULE PROCESSOR_1.TotalTimePerEntity       .01667     (Corr)     .01667     .01667       3196    
+MODULE PROCESSOR_5.VATimePerEntity          .01667     (Corr)     .01667     .01667       2712    
+MODULE PROCESSOR_4.VATimePerEntity          .01667     (Corr)     .01667     .01667       2822    
+MODULE PROCESSOR_3.VATimePerEntity          .01667     (Corr)     .01667     .01667       2956    
+MODULE PROCESSOR_2.VATimePerEntity          .01667     (Corr)     .01667     .01667       3076    
+MODULE PROCESSOR_1.VATimePerEntity          .01667     (Corr)     .01667     .01667       3196    
+MODULE PROCESSOR_5.OtherTimePerEntity       .00000     .00000     .00000     .00000       2712    
+MODULE PROCESSOR_4.OtherTimePerEntity       .00000     .00000     .00000     .00000       2822    
+MODULE PROCESSOR_3.OtherTimePerEntity       .00000     .00000     .00000     .00000       2956    
+MODULE PROCESSOR_2.OtherTimePerEntity       .00000     .00000     .00000     .00000       3076    
+MODULE PROCESSOR_1.OtherTimePerEntity       .00000     .00000     .00000     .00000       3196    
+MODULE PROCESSOR_5.TranCostPerEntity        .00000     .00000     .00000     .00000       2712    
+MODULE PROCESSOR_4.TranCostPerEntity        .00000     .00000     .00000     .00000       2822    
+MODULE PROCESSOR_3.TranCostPerEntity        .00000     .00000     .00000     .00000       2956    
+MODULE PROCESSOR_2.TranCostPerEntity        .00000     .00000     .00000     .00000       3076    
+MODULE PROCESSOR_1.TranCostPerEntity        .00000     .00000     .00000     .00000       3196    
+MODULE PROCESSOR_5.NVATimePerEntity         .00000     .00000     .00000     .00000       2712    
+MODULE PROCESSOR_4.NVATimePerEntity         .00000     .00000     .00000     .00000       2822    
+MODULE PROCESSOR_3.NVATimePerEntity         .00000     .00000     .00000     .00000       2956    
+MODULE PROCESSOR_2.NVATimePerEntity         .00000     .00000     .00000     .00000       3076    
+MODULE PROCESSOR_1.NVATimePerEntity         .00000     .00000     .00000     .00000       3196    
+DEVICE_5.VACostPerEntity                    .00000     (Insuf)    .00000     .00000        110    
+DEVICE_4.VACostPerEntity                    .00000     (Insuf)    .00000     .00000        134    
+DEVICE_3.VACostPerEntity                    .00000     (Insuf)    .00000     .00000        120    
+DEVICE_2.VACostPerEntity                    .00000     (Insuf)    .00000     .00000        120    
+DEVICE_1.VACostPerEntity                    .00000     (Insuf)    .00000     .00000        116    
+TRANSITION TO DEVICE_1.TotalTimePerEntity   .01667     (Corr)     .01667     .01667       2712    
+TRANSITION TO DEVICE_5.TotalTimePerEntity   .01667     (Corr)     .01667     .01667       2822    
+TRANSITION TO DEVICE_4.TotalTimePerEntity   .01667     (Corr)     .01667     .01667       2956    
+TRANSITION TO DEVICE_3.TotalTimePerEntity   .01667     (Corr)     .01667     .01667       3076    
+TRANSITION TO DEVICE_2.TotalTimePerEntity   .01667     (Corr)     .01667     .01667       3196    
+DEVICE_5.TotalTimePerEntity                 .01891     (Insuf)     1.6594E-4 .09895        110    
+DEVICE_4.TotalTimePerEntity                 .01456     (Insuf)     2.3627E-5 .07631        134    
+DEVICE_3.TotalTimePerEntity                 .01659     (Insuf)     5.1684E-5 .07806        120    
+DEVICE_2.TotalTimePerEntity                 .01717     (Insuf)     5.4379E-5 .09511        120    
+DEVICE_1.TotalTimePerEntity                 .01779     (Insuf)     1.8709E-4 .11024        116    
+MODULE PROCESSOR_5.WaitCostPerEntity        .00000     .00000     .00000     .00000       2712    
+MODULE PROCESSOR_4.WaitCostPerEntity        .00000     .00000     .00000     .00000       2822    
+MODULE PROCESSOR_3.WaitCostPerEntity        .00000     .00000     .00000     .00000       2956    
+MODULE PROCESSOR_2.WaitCostPerEntity        .00000     .00000     .00000     .00000       3076    
+MODULE PROCESSOR_1.WaitCostPerEntity        .00000     .00000     .00000     .00000       3196    
+MODULE PROCESSOR_5.TranTimePerEntity        .00000     .00000     .00000     .00000       2712    
+MODULE PROCESSOR_4.TranTimePerEntity        .00000     .00000     .00000     .00000       2822    
+MODULE PROCESSOR_3.TranTimePerEntity        .00000     .00000     .00000     .00000       2956    
+MODULE PROCESSOR_2.TranTimePerEntity        .00000     .00000     .00000     .00000       3076    
+MODULE PROCESSOR_1.TranTimePerEntity        .00000     .00000     .00000     .00000       3196    
+TRANSITION TO DEVICE_1.TotalCostPerEntity   .00000     .00000     .00000     .00000       2712    
+TRANSITION TO DEVICE_5.TotalCostPerEntity   .00000     .00000     .00000     .00000       2822    
+TRANSITION TO DEVICE_4.TotalCostPerEntity   .00000     .00000     .00000     .00000       2956    
+TRANSITION TO DEVICE_3.TotalCostPerEntity   .00000     .00000     .00000     .00000       3076    
+TRANSITION TO DEVICE_2.TotalCostPerEntity   .00000     .00000     .00000     .00000       3196    
+TRANSITION TO DEVICE_1.VATimePerEntity      .01667     (Corr)     .01667     .01667       2712    
+TRANSITION TO DEVICE_5.VATimePerEntity      .01667     (Corr)     .01667     .01667       2822    
+TRANSITION TO DEVICE_4.VATimePerEntity      .01667     (Corr)     .01667     .01667       2956    
+TRANSITION TO DEVICE_3.VATimePerEntity      .01667     (Corr)     .01667     .01667       3076    
+TRANSITION TO DEVICE_2.VATimePerEntity      .01667     (Corr)     .01667     .01667       3196    
+MODULE PROCESSOR_5.TotalCostPerEntity       .00000     .00000     .00000     .00000       2712    
+MODULE PROCESSOR_4.TotalCostPerEntity       .00000     .00000     .00000     .00000       2822    
+MODULE PROCESSOR_3.TotalCostPerEntity       .00000     .00000     .00000     .00000       2956    
+MODULE PROCESSOR_2.TotalCostPerEntity       .00000     .00000     .00000     .00000       3076    
+MODULE PROCESSOR_1.TotalCostPerEntity       .00000     .00000     .00000     .00000       3196    
+MODULE PROCESSOR_5.NVACostPerEntity         .00000     .00000     .00000     .00000       2712    
+MODULE PROCESSOR_4.NVACostPerEntity         .00000     .00000     .00000     .00000       2822    
+MODULE PROCESSOR_3.NVACostPerEntity         .00000     .00000     .00000     .00000       2956    
+MODULE PROCESSOR_2.NVACostPerEntity         .00000     .00000     .00000     .00000       3076    
+MODULE PROCESSOR_1.NVACostPerEntity         .00000     .00000     .00000     .00000       3196    
+DEVICE_5.TotalCostPerEntity                 .00000     (Insuf)    .00000     .00000        110    
+DEVICE_4.TotalCostPerEntity                 .00000     (Insuf)    .00000     .00000        134    
+DEVICE_3.TotalCostPerEntity                 .00000     (Insuf)    .00000     .00000        120    
+DEVICE_2.TotalCostPerEntity                 .00000     (Insuf)    .00000     .00000        120    
+DEVICE_1.TotalCostPerEntity                 .00000     (Insuf)    .00000     .00000        116    
+DEVICE_5.VATimePerEntity                    .01891     (Insuf)     1.6594E-4 .09895        110    
+DEVICE_4.VATimePerEntity                    .01456     (Insuf)     2.3627E-5 .07631        134    
+DEVICE_3.VATimePerEntity                    .01659     (Insuf)     5.1684E-5 .07806        120    
+DEVICE_2.VATimePerEntity                    .01717     (Insuf)     5.4379E-5 .09511        120    
+DEVICE_1.VATimePerEntity                    .01779     (Insuf)     1.8709E-4 .11024        116    
+MODULE PROCESSOR_5.WaitTimePerEntity        .00000     .00000     .00000     .00000       2712    
+MODULE PROCESSOR_4.WaitTimePerEntity        .00000     .00000     .00000     .00000       2822    
+MODULE PROCESSOR_3.WaitTimePerEntity        .00000     .00000     .00000     .00000       2956    
+MODULE PROCESSOR_2.WaitTimePerEntity        .00000     .00000     .00000     .00000       3076    
+MODULE PROCESSOR_1.WaitTimePerEntity        .00000     .00000     .00000     .00000       3196    
+Generator.VATime                            .42697     (Corr)      2.2536E-4 3.1918        600    
+Generator.NVATime                           .00000     .00000     .00000     .00000        600    
+Generator.WaitTime                          .00000     .00000     .00000     .00000        600    
+Generator.TranTime                          .00000     .00000     .00000     .00000        600    
+Generator.OtherTime                         .00000     .00000     .00000     .00000        600    
+Generator.TotalTime                         .42697     (Corr)      2.2536E-4 3.1918        600    
+Generator.VACost                            .00000     .00000     .00000     .00000        600    
+Generator.NVACost                           .00000     .00000     .00000     .00000        600    
+Generator.WaitCost                          .00000     .00000     .00000     .00000        600    
+Generator.TranCost                          .00000     .00000     .00000     .00000        600    
+Generator.OtherCost                         .00000     .00000     .00000     .00000        600    
+Generator.TotalCost                         .00000     .00000     .00000     .00000        600    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+is_device_1_busy Value                      .63322     (Insuf)    .00000     1.0000     .00000    
+is_device_3_busy Value                      .61102     (Insuf)    .00000     1.0000     .00000    
+is_device_2_busy Value                      .63241     (Insuf)    .00000     1.0000     .00000    
+is_device_4_busy Value                      .59869     (Insuf)    .00000     1.0000     .00000    
+is_device_5_busy Value                      .63847     (Insuf)    .00000     1.0000     .00000    
+Generator.WIP                               78.618     (Insuf)    .00000     147.00     .00000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+MODULE PROCESSOR_1 Total Accum Time         53.266    
+MODULE PROCESSOR_1 Total Accum Cost         .00000    
+DEVICE_5 Accum VA Time                      2.0804    
+DEVICE_4 Accum VA Time                      1.9508    
+DEVICE_3 Accum VA Time                      1.9910    
+DEVICE_2 Accum VA Time                      2.0607    
+DEVICE_1 Accum VA Time                      2.0633    
+TRANSITION TO DEVICE_1 Total Accum Cost     .00000    
+TRANSITION TO DEVICE_5 Total Accum Cost     .00000    
+TRANSITION TO DEVICE_4 Total Accum Cost     .00000    
+TRANSITION TO DEVICE_3 Total Accum Cost     .00000    
+TRANSITION TO DEVICE_2 Total Accum Cost     .00000    
+MODULE PROCESSOR_3 Total Accum Time         49.266    
+MODULE PROCESSOR_3 Total Accum Cost         .00000    
+MODULE PROCESSOR_5 Accum Other Time         .00000    
+MODULE PROCESSOR_4 Accum Other Time         .00000    
+MODULE PROCESSOR_3 Accum Other Time         .00000    
+MODULE PROCESSOR_2 Accum Other Time         .00000    
+MODULE PROCESSOR_1 Accum Other Time         .00000    
+MODULE PROCESSOR_2 Total Accum Time         51.266    
+MODULE PROCESSOR_2 Total Accum Cost         .00000    
+MODULE PROCESSOR_4 Total Accum Time         47.033    
+MODULE PROCESSOR_4 Total Accum Cost         .00000    
+DEVICE_5 Total Accum Cost                   .00000    
+DEVICE_4 Total Accum Cost                   .00000    
+DEVICE_3 Total Accum Cost                   .00000    
+DEVICE_2 Total Accum Cost                   .00000    
+DEVICE_1 Total Accum Cost                   .00000    
+MODULE PROCESSOR_5 Accum NVA Cost           .00000    
+MODULE PROCESSOR_4 Accum NVA Cost           .00000    
+MODULE PROCESSOR_3 Accum NVA Cost           .00000    
+MODULE PROCESSOR_2 Accum NVA Cost           .00000    
+MODULE PROCESSOR_1 Accum NVA Cost           .00000    
+MODULE PROCESSOR_5 Accum Transfer Time      .00000    
+MODULE PROCESSOR_4 Accum Transfer Time      .00000    
+MODULE PROCESSOR_3 Accum Transfer Time      .00000    
+MODULE PROCESSOR_2 Accum Transfer Time      .00000    
+MODULE PROCESSOR_1 Accum Transfer Time      .00000    
+MODULE PROCESSOR_5 Accum NVA Time           .00000    
+MODULE PROCESSOR_4 Accum NVA Time           .00000    
+MODULE PROCESSOR_3 Accum NVA Time           .00000    
+MODULE PROCESSOR_2 Accum NVA Time           .00000    
+MODULE PROCESSOR_1 Accum NVA Time           .00000    
+MODULE PROCESSOR_5 Accum Transfer Cost      .00000    
+MODULE PROCESSOR_4 Accum Transfer Cost      .00000    
+MODULE PROCESSOR_3 Accum Transfer Cost      .00000    
+MODULE PROCESSOR_2 Accum Transfer Cost      .00000    
+MODULE PROCESSOR_1 Accum Transfer Cost      .00000    
+MODULE PROCESSOR_5 Total Accum Time         45.200    
+MODULE PROCESSOR_5 Total Accum Cost         .00000    
+TRANSITION TO DEVICE_3 Accum VA Time        51.266    
+TRANSITION TO DEVICE_1 Number Out           2712.0    
+TRANSITION TO DEVICE_1 Number In            2712.0    
+TRANSITION TO DEVICE_5 Number Out           2822.0    
+TRANSITION TO DEVICE_5 Number In            2822.0    
+TRANSITION TO DEVICE_4 Number Out           2956.0    
+TRANSITION TO DEVICE_4 Number In            2956.0    
+TRANSITION TO DEVICE_3 Number Out           3076.0    
+TRANSITION TO DEVICE_3 Number In            3076.0    
+TRANSITION TO DEVICE_2 Number Out           3196.0    
+TRANSITION TO DEVICE_2 Number In            3196.0    
+TRANSITION TO DEVICE_3 Accum VA Cost        .00000    
+MODULE PROCESSOR_5 Accum Wait Time          .00000    
+MODULE PROCESSOR_4 Accum Wait Time          .00000    
+MODULE PROCESSOR_3 Accum Wait Time          .00000    
+MODULE PROCESSOR_2 Accum Wait Time          .00000    
+MODULE PROCESSOR_1 Accum Wait Time          .00000    
+MODULE PROCESSOR_5 Accum Wait Cost          .00000    
+MODULE PROCESSOR_4 Accum Wait Cost          .00000    
+MODULE PROCESSOR_3 Accum Wait Cost          .00000    
+MODULE PROCESSOR_2 Accum Wait Cost          .00000    
+MODULE PROCESSOR_1 Accum Wait Cost          .00000    
+TRANSITION TO DEVICE_2 Accum VA Time        53.266    
+MODULE PROCESSOR_5 Accum VA Cost            .00000    
+MODULE PROCESSOR_4 Accum VA Cost            .00000    
+MODULE PROCESSOR_3 Accum VA Cost            .00000    
+MODULE PROCESSOR_2 Accum VA Cost            .00000    
+MODULE PROCESSOR_1 Accum VA Cost            .00000    
+TRANSITION TO DEVICE_2 Accum VA Cost        .00000    
+TRANSITION TO DEVICE_1 Accum VA Cost        .00000    
+TRANSITION TO DEVICE_4 Accum VA Cost        .00000    
+DEVICE_5 Number In                          110.00    
+DEVICE_4 Number In                          134.00    
+DEVICE_3 Number In                          120.00    
+DEVICE_2 Number In                          120.00    
+DEVICE_1 Number In                          116.00    
+TRANSITION TO DEVICE_1 Accum VA Time        45.200    
+TRANSITION TO DEVICE_5 Accum VA Cost        .00000    
+DEVICE_5 Number Out                         110.00    
+DEVICE_4 Number Out                         134.00    
+TRANSITION TO DEVICE_4 Accum VA Time        49.266    
+DEVICE_3 Number Out                         120.00    
+DEVICE_2 Number Out                         120.00    
+DEVICE_1 Number Out                         116.00    
+TRANSITION TO DEVICE_5 Accum VA Time        47.033    
+MODULE PROCESSOR_5 Number In                2822.0    
+MODULE PROCESSOR_4 Number In                2956.0    
+MODULE PROCESSOR_3 Number In                3076.0    
+MODULE PROCESSOR_2 Number In                3196.0    
+MODULE PROCESSOR_1 Number In                3312.0    
+MODULE PROCESSOR_5 Accum Other Cost         .00000    
+MODULE PROCESSOR_4 Accum Other Cost         .00000    
+MODULE PROCESSOR_3 Accum Other Cost         .00000    
+MODULE PROCESSOR_2 Accum Other Cost         .00000    
+MODULE PROCESSOR_1 Accum Other Cost         .00000    
+TRANSITION TO DEVICE_1 Total Accum Time     45.200    
+TRANSITION TO DEVICE_5 Total Accum Time     47.033    
+TRANSITION TO DEVICE_4 Total Accum Time     49.266    
+TRANSITION TO DEVICE_3 Total Accum Time     51.266    
+TRANSITION TO DEVICE_2 Total Accum Time     53.266    
+DEVICE_5 Total Accum Time                   2.0804    
+DEVICE_4 Total Accum Time                   1.9508    
+DEVICE_3 Total Accum Time                   1.9910    
+DEVICE_2 Total Accum Time                   2.0607    
+DEVICE_1 Total Accum Time                   2.0633    
+MODULE PROCESSOR_5 Accum VA Time            45.200    
+MODULE PROCESSOR_4 Accum VA Time            47.033    
+MODULE PROCESSOR_3 Accum VA Time            49.266    
+MODULE PROCESSOR_2 Accum VA Time            51.266    
+MODULE PROCESSOR_1 Accum VA Time            53.266    
+MODULE PROCESSOR_5 Number Out               2712.0    
+MODULE PROCESSOR_4 Number Out               2822.0    
+MODULE PROCESSOR_3 Number Out               2956.0    
+MODULE PROCESSOR_2 Number Out               3076.0    
+MODULE PROCESSOR_1 Number Out               3196.0    
+DEVICE_5 Accum VA Cost                      .00000    
+DEVICE_4 Accum VA Cost                      .00000    
+DEVICE_3 Accum VA Cost                      .00000    
+DEVICE_2 Accum VA Cost                      .00000    
+DEVICE_1 Accum VA Cost                      .00000    
+Generator.NumberIn                          600.00    
+Generator.NumberOut                         600.00    
+All Entities.VACost                         .00000    
+All Entities.NVACost                        .00000    
+All Entities.WaitCost                       .00000    
+All Entities.TranCost                       .00000    
+All Entities.OtherCost                      .00000    
+All Entities.TotalCost                      .00000    
+All Resources.BusyCost                      .00000    
+All Resources.IdleCost                      .00000    
+All Resources.UsageCost                     .00000    
+All Resources.TotalCost                     .00000    
+System.TotalCost                            .00000    
+System.NumberOut                            600.00    
+
+
+Simulation run time: 0.02 minutes.
+Simulation run complete.

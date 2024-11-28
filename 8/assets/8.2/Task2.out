@@ -1,0 +1,165 @@
+
+                                      ARENA Simulation Results
+                                      NgenX - License: STUDENT
+
+                                  Summary for Replication 1 of 1
+
+Project: Unnamed Project                                             Run execution date :11/28/2024
+Analyst: NgenX                                                       Model revision date:11/28/2024
+
+Replication ended at time      : 3.4251804 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+TRANSITION TO DEVICE_1.VACostPerEntity      .00000     .00000     .00000     .00000       1522    
+TRANSITION TO DEVICE_5.VACostPerEntity      .00000     .00000     .00000     .00000       1640    
+TRANSITION TO DEVICE_4.VACostPerEntity      .00000     .00000     .00000     .00000       1772    
+TRANSITION TO DEVICE_3.VACostPerEntity      .00000     .00000     .00000     .00000       1887    
+TRANSITION TO DEVICE_2.VACostPerEntity      .00000     .00000     .00000     .00000       2008    
+DEVICE_5.VACostPerEntity                    .00000     (Insuf)    .00000     .00000        118    
+DEVICE_4.VACostPerEntity                    .00000     (Insuf)    .00000     .00000        132    
+DEVICE_3.VACostPerEntity                    .00000     (Insuf)    .00000     .00000        115    
+DEVICE_2.VACostPerEntity                    .00000     (Insuf)    .00000     .00000        121    
+DEVICE_1.VACostPerEntity                    .00000     (Insuf)    .00000     .00000        114    
+TRANSITION TO DEVICE_1.TotalTimePerEntity   .08333      6.2684E-8 .08333     .08333       1522    
+TRANSITION TO DEVICE_5.TotalTimePerEntity   .01667     (Corr)     .01667     .01667       1640    
+TRANSITION TO DEVICE_4.TotalTimePerEntity   .01667     (Corr)     .01667     .01667       1772    
+TRANSITION TO DEVICE_3.TotalTimePerEntity   .01667     (Corr)     .01667     .01667       1887    
+TRANSITION TO DEVICE_2.TotalTimePerEntity   .01667     (Corr)     .01667     .01667       2008    
+DEVICE_5.TotalTimePerEntity                 .01660     (Insuf)     5.4379E-5 .09895        118    
+DEVICE_4.TotalTimePerEntity                 .01483     (Insuf)     2.3627E-5 .07631        132    
+DEVICE_3.TotalTimePerEntity                 .01709     (Insuf)     5.1684E-5 .07806        115    
+DEVICE_2.TotalTimePerEntity                 .01724     (Insuf)     2.2088E-4 .08406        121    
+DEVICE_1.TotalTimePerEntity                 .01911     (Insuf)     1.0876E-4 .11024        114    
+TRANSITION TO DEVICE_1.TotalCostPerEntity   .00000     .00000     .00000     .00000       1522    
+TRANSITION TO DEVICE_5.TotalCostPerEntity   .00000     .00000     .00000     .00000       1640    
+TRANSITION TO DEVICE_4.TotalCostPerEntity   .00000     .00000     .00000     .00000       1772    
+TRANSITION TO DEVICE_3.TotalCostPerEntity   .00000     .00000     .00000     .00000       1887    
+TRANSITION TO DEVICE_2.TotalCostPerEntity   .00000     .00000     .00000     .00000       2008    
+TRANSITION TO DEVICE_1.VATimePerEntity      .08333      6.3977E-8 .08333     .08333       1522    
+TRANSITION TO DEVICE_5.VATimePerEntity      .01667     (Corr)     .01667     .01667       1640    
+TRANSITION TO DEVICE_4.VATimePerEntity      .01667     (Corr)     .01667     .01667       1772    
+TRANSITION TO DEVICE_3.VATimePerEntity      .01667     (Corr)     .01667     .01667       1887    
+TRANSITION TO DEVICE_2.VATimePerEntity      .01667     (Corr)     .01667     .01667       2008    
+DEVICE_5.TotalCostPerEntity                 .00000     (Insuf)    .00000     .00000        118    
+DEVICE_4.TotalCostPerEntity                 .00000     (Insuf)    .00000     .00000        132    
+DEVICE_3.TotalCostPerEntity                 .00000     (Insuf)    .00000     .00000        115    
+DEVICE_2.TotalCostPerEntity                 .00000     (Insuf)    .00000     .00000        121    
+DEVICE_1.TotalCostPerEntity                 .00000     (Insuf)    .00000     .00000        114    
+DEVICE_5.VATimePerEntity                    .01660     (Insuf)     5.4379E-5 .09895        118    
+DEVICE_4.VATimePerEntity                    .01483     (Insuf)     2.3627E-5 .07631        132    
+DEVICE_3.VATimePerEntity                    .01709     (Insuf)     5.1684E-5 .07806        115    
+DEVICE_2.VATimePerEntity                    .01724     (Insuf)     2.2088E-4 .08406        121    
+DEVICE_1.VATimePerEntity                    .01911     (Insuf)     1.0876E-4 .11024        114    
+Generator.VATime                            .43127     (Corr)      2.2536E-4 3.3418        600    
+Generator.NVATime                           .00000     .00000     .00000     .00000        600    
+Generator.WaitTime                          .00000     .00000     .00000     .00000        600    
+Generator.TranTime                          .00000     .00000     .00000     .00000        600    
+Generator.OtherTime                         .00000     .00000     .00000     .00000        600    
+Generator.TotalTime                         .43127     (Corr)      2.2536E-4 3.3418        600    
+Generator.VACost                            .00000     .00000     .00000     .00000        600    
+Generator.NVACost                           .00000     .00000     .00000     .00000        600    
+Generator.WaitCost                          .00000     .00000     .00000     .00000        600    
+Generator.TranCost                          .00000     .00000     .00000     .00000        600    
+Generator.OtherCost                         .00000     .00000     .00000     .00000        600    
+Generator.TotalCost                         .00000     .00000     .00000     .00000        600    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+is_device_1_busy Value                      .63603     (Insuf)    .00000     1.0000     .00000    
+is_device_3_busy Value                      .57385     (Insuf)    .00000     1.0000     .00000    
+is_device_2_busy Value                      .60894     (Insuf)    .00000     1.0000     .00000    
+is_device_4_busy Value                      .57159     (Insuf)    .00000     1.0000     .00000    
+is_device_5_busy Value                      .57188     (Insuf)    .00000     1.0000     .00000    
+Generator.WIP                               75.547     (Insuf)    .00000     147.00     .00000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+DEVICE_5 Accum VA Time                      1.9588    
+DEVICE_4 Accum VA Time                      1.9578    
+DEVICE_3 Accum VA Time                      1.9655    
+DEVICE_2 Accum VA Time                      2.0857    
+DEVICE_1 Accum VA Time                      2.1785    
+TRANSITION TO DEVICE_1 Total Accum Cost     .00000    
+TRANSITION TO DEVICE_5 Total Accum Cost     .00000    
+TRANSITION TO DEVICE_4 Total Accum Cost     .00000    
+TRANSITION TO DEVICE_3 Total Accum Cost     .00000    
+TRANSITION TO DEVICE_2 Total Accum Cost     .00000    
+DEVICE_5 Total Accum Cost                   .00000    
+DEVICE_4 Total Accum Cost                   .00000    
+DEVICE_3 Total Accum Cost                   .00000    
+DEVICE_2 Total Accum Cost                   .00000    
+DEVICE_1 Total Accum Cost                   .00000    
+TRANSITION TO DEVICE_3 Accum VA Time        31.450    
+TRANSITION TO DEVICE_1 Number Out           1522.0    
+TRANSITION TO DEVICE_1 Number In            1522.0    
+TRANSITION TO DEVICE_5 Number Out           1640.0    
+TRANSITION TO DEVICE_5 Number In            1640.0    
+TRANSITION TO DEVICE_4 Number Out           1772.0    
+TRANSITION TO DEVICE_4 Number In            1772.0    
+TRANSITION TO DEVICE_3 Number Out           1887.0    
+TRANSITION TO DEVICE_3 Number In            1887.0    
+TRANSITION TO DEVICE_2 Number Out           2008.0    
+TRANSITION TO DEVICE_2 Number In            2008.0    
+TRANSITION TO DEVICE_3 Accum VA Cost        .00000    
+TRANSITION TO DEVICE_2 Accum VA Time        33.466    
+TRANSITION TO DEVICE_2 Accum VA Cost        .00000    
+TRANSITION TO DEVICE_1 Accum VA Cost        .00000    
+TRANSITION TO DEVICE_4 Accum VA Cost        .00000    
+DEVICE_5 Number In                          118.00    
+DEVICE_4 Number In                          132.00    
+DEVICE_3 Number In                          115.00    
+DEVICE_2 Number In                          121.00    
+DEVICE_1 Number In                          114.00    
+TRANSITION TO DEVICE_1 Accum VA Time        126.83    
+TRANSITION TO DEVICE_5 Accum VA Cost        .00000    
+DEVICE_5 Number Out                         118.00    
+DEVICE_4 Number Out                         132.00    
+TRANSITION TO DEVICE_4 Accum VA Time        29.533    
+DEVICE_3 Number Out                         115.00    
+DEVICE_2 Number Out                         121.00    
+DEVICE_1 Number Out                         114.00    
+TRANSITION TO DEVICE_5 Accum VA Time        27.333    
+TRANSITION TO DEVICE_1 Total Accum Time     126.83    
+TRANSITION TO DEVICE_5 Total Accum Time     27.333    
+TRANSITION TO DEVICE_4 Total Accum Time     29.533    
+TRANSITION TO DEVICE_3 Total Accum Time     31.450    
+TRANSITION TO DEVICE_2 Total Accum Time     33.466    
+DEVICE_5 Total Accum Time                   1.9588    
+DEVICE_4 Total Accum Time                   1.9578    
+DEVICE_3 Total Accum Time                   1.9655    
+DEVICE_2 Total Accum Time                   2.0857    
+DEVICE_1 Total Accum Time                   2.1785    
+DEVICE_5 Accum VA Cost                      .00000    
+DEVICE_4 Accum VA Cost                      .00000    
+DEVICE_3 Accum VA Cost                      .00000    
+DEVICE_2 Accum VA Cost                      .00000    
+DEVICE_1 Accum VA Cost                      .00000    
+Generator.NumberIn                          600.00    
+Generator.NumberOut                         600.00    
+All Entities.VACost                         .00000    
+All Entities.NVACost                        .00000    
+All Entities.WaitCost                       .00000    
+All Entities.TranCost                       .00000    
+All Entities.OtherCost                      .00000    
+All Entities.TotalCost                      .00000    
+All Resources.BusyCost                      .00000    
+All Resources.IdleCost                      .00000    
+All Resources.UsageCost                     .00000    
+All Resources.TotalCost                     .00000    
+System.TotalCost                            .00000    
+System.NumberOut                            600.00    
+
+
+Simulation run time: 0.02 minutes.
+Simulation run complete.
