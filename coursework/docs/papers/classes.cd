@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Coursework.Application.Program">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Application\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Blueprints.Schemes.Common.Scheme">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Blueprints\Schemes\Common\Scheme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Blueprints.Schemes.Concrete.SimpleScheme">
+    <Position X="12" Y="8.25" Width="2.25" />
+    <InheritanceLine Type="Coursework.Framework.Components.Blueprints.Schemes.Common.Scheme" FixedToPoint="true">
+      <Path>
+        <Point X="13.25" Y="6.175" />
+        <Point X="13.25" Y="8.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QgICAAQAAAAAAgAAAAQAAAACAIQAgAAAAAEAAAAAABg=</HashCode>
+      <FileName>Framework\Components\Blueprints\Schemes\Concrete\SimpleScheme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Blueprints.Transitions.Common.Transition">
+    <Position X="17.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Blueprints\Transitions\Common\Transition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Blueprints.Transitions.Concrete.DisposeTransition">
+    <Position X="20" Y="8.25" Width="2.5" />
+    <InheritanceLine Type="Coursework.Framework.Components.Blueprints.Transitions.Common.Transition" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="18.188" Y="6.819" />
+        <Point X="18.188" Y="7.753" />
+        <Point X="21.25" Y="7.753" />
+        <Point X="21.25" Y="8.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAAIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Blueprints\Transitions\Concrete\DisposeTransition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Blueprints.Transitions.Concrete.ProcessorBlockingTransition">
+    <Position X="17.25" Y="8.25" Width="2.5" />
+    <InheritanceLine Type="Coursework.Framework.Components.Blueprints.Transitions.Common.Transition" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.188" Y="6.819" />
+        <Point X="18.188" Y="7.625" />
+        <Point X="18.188" Y="7.625" />
+        <Point X="18.188" Y="8.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QgAAAAEAAAAAAwAAAAAAAIQAAAAAAAIAAAAAAABAAAA=</HashCode>
+      <FileName>Framework\Components\Blueprints\Transitions\Concrete\ProcessorBlockingTransition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Blueprints.Transitions.Concrete.ProcessorSimpleTransition">
+    <Position X="14.5" Y="8.25" Width="2.5" />
+    <InheritanceLine Type="Coursework.Framework.Components.Blueprints.Transitions.Common.Transition" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="18.188" Y="6.819" />
+        <Point X="18.188" Y="7.675" />
+        <Point X="15.75" Y="7.675" />
+        <Point X="15.75" Y="8.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAAIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Blueprints\Transitions\Concrete\ProcessorSimpleTransition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Common.Element">
+    <Position X="12.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Framework\Components\Common\Element.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Coursework.Framework.Components.Modules.Common.Module">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAIAoAAAAAAAAABAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Framework\Components\Modules\Common\Module.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Modules.Concrete.CreateModule">
+    <Position X="5.75" Y="8.25" Width="1.75" />
+    <InheritanceLine Type="Coursework.Framework.Components.Modules.Common.Module" FixedFromPoint="true">
+      <Path>
+        <Point X="8.75" Y="7.396" />
+        <Point X="8.75" Y="7.875" />
+        <Point X="6.625" Y="7.875" />
+        <Point X="6.625" Y="8.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAAAAQIgoAAAAAAAAABAAABAAAAABAAAEAAAA=</HashCode>
+      <FileName>Framework\Components\Modules\Concrete\CreateModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Modules.Concrete.DisposeModule">
+    <Position X="10" Y="8.25" Width="1.75" />
+    <InheritanceLine Type="Coursework.Framework.Components.Modules.Common.Module" FixedFromPoint="true">
+      <Path>
+        <Point X="8.75" Y="7.396" />
+        <Point X="8.75" Y="7.875" />
+        <Point X="10.875" Y="7.875" />
+        <Point X="10.875" Y="8.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAAAAAIgoAAAABAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Modules\Concrete\DisposeModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Modules.Concrete.ProcessorModule">
+    <Position X="7.75" Y="8.25" Width="2" />
+    <InheritanceLine Type="Coursework.Framework.Components.Modules.Common.Module" FixedFromPoint="true">
+      <Path>
+        <Point X="8.75" Y="7.396" />
+        <Point X="8.75" Y="8.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QgJAAABAAAIQIgoIAABAAABABAAAhAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Modules\Concrete\ProcessorModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Queues.Concrete.SimpleQueueFIFO">
+    <Position X="24.75" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gABAAAAAAAAAAAAAAABAAAQAAAAAhAAIAAAAAIFAAAA=</HashCode>
+      <FileName>Framework\Components\Queues\Concrete\SimpleQueueFIFO.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Coursework.Framework.Components.Tasks.Common.DummyTask">
+    <Position X="3.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAAAABAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Tasks\Common\DummyTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Tasks.Concrete.PacketDummyTask">
+    <Position X="3" Y="10" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Tasks\Concrete\PacketDummyTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Framework.Components.Tasks.Utilities.Factories.Concrete.PacketDummyTaskFactory">
+    <Position X="0.5" Y="8.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Tasks\Utilities\Factories\Concrete\PacketDummyTaskFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Coursework.Framework.Components.Workers.Concrete.MockNormalWorker">
+    <Position X="25.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAIAAAAAAIAABAAAQAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Workers\Concrete\MockNormalWorker.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Coursework.Framework.Components.Workers.Concrete.StubConstantWorker">
+    <Position X="23.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Workers\Concrete\StubConstantWorker.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Coursework.Framework.Core.Controllers.SystemModelController">
+    <Position X="0.5" Y="2.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAEAAAAAAAgAAABAAAEAAgABAgAAAQAAAAAAAIAA=</HashCode>
+      <FileName>Framework\Core\Controllers\SystemModelController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Coursework.Framework.Core.Services.SystemLoggerService">
+    <Position X="0.5" Y="11.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAEQAEAECAAAIAAABAAgAEQABAwAAEAAA=</HashCode>
+      <FileName>Framework\Core\Services\SystemLoggerService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Coursework.Framework.Common.IStatisticsPrinter">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Common\IStatisticsPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Coursework.Framework.Components.Queues.Common.IQueue">
+    <Position X="24.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAQAAAAABAAIAAAAAIBAAAA=</HashCode>
+      <FileName>Framework\Components\Queues\Common\IQueues.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Coursework.Framework.Components.Tasks.Utilities.Factories.Common.IDummyTaskFactory">
+    <Position X="0.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Tasks\Utilities\Factories\Common\IDummyTaskFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Coursework.Framework.Components.Workers.Common.IWorker">
+    <Position X="24.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Components\Workers\Common\IWorker.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Coursework.Framework.Common.IStatisticsAggregator">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Common\IStatisticsAggregator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Coursework.Framework.Components.Blueprints.Transitions.Common.TransitionStatus">
+    <Position X="19" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAEAAAA=</HashCode>
+      <FileName>Framework\Components\Blueprints\Transitions\Common\TransitionStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
